@@ -4,6 +4,12 @@ mixin storeForm(store = {})
     input(type="text" name="name" value=store.name)
     lable(for="description") Description
     textarea(name="description")= store.description
+    label(for="address") Address
+    input(type="text" id="address" name="location[address]" value=(store.location && store.location.address))
+    label(for="lng") Adress Lang
+    input(type="text" id="lng" name="location[coordinates][0]" value=(store.location && store.location.coordinates[0]))
+    label(for="lat") Adress Lat
+    input(type="text" id="lat" name="location[coordinates][1]" value=(store.location && store.location.coordinates[1]))
     -const choices = ['Late night', 'Family Friendly', 'Licensed', 'Vegeterian'];
     -const tags = store.tags || []
     ul.tags
