@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.inner
+    form(action=`/register` method="POST")
+      label(for="email") Email Address
+      input(type="text" name="email" id="email")
+      label(for="name") Name
+      input(type="text" name="name" id="name")
+      lable(for="password") Password
+      input(type="password" name="password" id="password")
+      lable(for="confirm-password") Confirm Password
+      input(type="password" name="password-confirm" id="confirm-password")
+      input(type="submit" value="Register 🤘" class="button")
