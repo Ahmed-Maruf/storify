@@ -43,7 +43,6 @@ exports.register = async (req, res, next) => {
 	});
 	const registerPromise = promisify(User.register, User);
 	await registerPromise(user, req.body.password);
-	console.log(req.body);
 	next();
 	
 }
