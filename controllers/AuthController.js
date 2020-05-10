@@ -2,7 +2,7 @@ const passport = require('passport');
 
 exports.isLoggedIn = (req, res, next) => {
 	if (req.isAuthenticated()){
-		next();
+		return next();
 	}
 	req.flash('error', 'You must logg in!');
 	res.redirect('/login');

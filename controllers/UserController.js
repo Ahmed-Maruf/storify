@@ -17,7 +17,7 @@ exports.validateRegistration = (req, res, next) => {
 	
 	const errors = req.validationErrors();
 	
-	if (errors){
+	if (errors) {
 		console.log("Errors");
 		req.flash('error', errors.map(error => error.msg));
 		res.render('registration', {
@@ -45,4 +45,28 @@ exports.register = async (req, res, next) => {
 	await registerPromise(user, req.body.password);
 	next();
 	
+}
+
+exports.account = (req, res) => {
+	res.render('account', {
+		title: 'Edit User'
+	})
+}
+
+exports.update = async (req, res, next) => {
+	const updates = {
+		name: req.body.name,
+		email: req.body.email
+	}
+	
+	const user = await User.findOneAndUpdate(
+		{_id: req.user._id},
+		updates,
+		{
+			new: true,
+			runValidators: true,
+		}
+	).exec();
+	req.flash('success', 'Updated profile');
+	res.redirect('back');
 }

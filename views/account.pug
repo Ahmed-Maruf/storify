@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.inner
+    h2 Edit you account
+    form(action="/account" method="POST")
+      label(for="email") Email Address
+      input(type="text" name="email" id="email" value=user.email)
+      label(for="name") Name
+      input(type="text" name="name" id="name" value=user.name)
+      lable(for="password") Password
+      input(type="password" name="password" id="password")
+      input(type="submit" value="Update ⏩" class="button")
