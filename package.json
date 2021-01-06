@@ -16,7 +16,7 @@
   },
   "browserslist": "last 3 versions",
   "dependencies": {
-    "axios": "0.15.3",
+    "axios": "0.21.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "1.17.1",
